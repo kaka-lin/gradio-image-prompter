@@ -116,15 +116,22 @@ class ImagePrompter(gradio.Image):
         )
 
     def preprocess(self, x: PromptData) -> PromptValue | None:
+        """Component is used as an input."""
         if x is None:
             return x
         im = super().preprocess(x.image)
         return {"image": im, "points": x.points}
 
-    def postprocess(self, y: PromptValue) -> PromptData | None:
+    def postprocess(
+        self, y: PromptValue | str | np.ndarray | _Image.Image
+    ) -> PromptData | None:
+        """Component is used as an output."""
         if y is None:
             return None
-        image, points = y.get("image", None), y.get("points", [])
+        if isinstance(y, dict):  # PromptValue is TypedDict (dict)
+            image, points = y.get("image", None), y.get("points", [])
+        else:
+            image, points = y, []
         return PromptData(image=super().postprocess(image), points=points)
 
     def as_example(self, y: PromptValue) -> str | None:

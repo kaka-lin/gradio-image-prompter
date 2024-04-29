@@ -5,17 +5,17 @@ This custom component is developed for [Tokenize Anything](https://github.com/ba
 
 ## Quick Start (for using this package)
 
-### 0. Preliminaries
+### Preliminaries
 
 - ``gradio`` >= 4.0.0
 
-### 1. Installing Package
+### Installing Package
 
 ```bash
 pip install gradio-image-prompter
 ```
 
-### 2. Example
+### Example
 
 ```python
 import gradio as gr
