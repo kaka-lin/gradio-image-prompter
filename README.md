@@ -3,29 +3,19 @@ A gradio component to upload images and process point/box prompts.
 
 This custom component is developed for [Tokenize Anything](https://github.com/baaivision/tokenize-anything) gradio demo.
 
-## Installation
+## Quick Start (for using this package)
 
-### Preliminaries
+### 0. Preliminaries
 
-``gradio`` >= 4.0.0
+- ``gradio`` >= 4.0.0
 
-### Installing Package
+### 1. Installing Package
 
 ```bash
 pip install gradio-image-prompter
 ```
 
-## Quick Start
-
-### Development
-
-```bash
-cd gradio-image-prompter
-gradio cc install
-gradio cc dev
-```
-
-### Example
+### 2. Example
 
 ```python
 import gradio as gr
@@ -38,6 +28,30 @@ demo = gr.Interface(
 )
 demo.launch()
 
+```
+
+## Development
+
+### Preliminaries
+
+- ``python`` >= 3.9.0 (3.9.19)
+
+### Install Requirements Packages
+
+```sh
+$ cd gradio-image-prompter
+$ npm install
+
+# Install the custom component in the current environment
+$ gradio cc install 
+```
+
+### Run the development mode. 
+
+launches a development server with a sample app & hot reloading allowing you to easily develop your custom component
+
+```bash
+$ gradio cc dev
 ```
 
 ## License
