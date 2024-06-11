@@ -8,6 +8,7 @@ This custom component is developed for [Tokenize Anything](https://github.com/ba
 ### Preliminaries
 
 - ``gradio`` >= 4.0.0
+- ``node`` >= 18
 
 ### Installing Package
 
